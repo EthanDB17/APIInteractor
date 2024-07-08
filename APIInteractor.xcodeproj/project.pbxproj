@@ -11,6 +11,10 @@
 		378B1E6A2C3C973700F644D7 /* APIInteractor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378B1E5F2C3C973700F644D7 /* APIInteractor.framework */; };
 		378B1E6F2C3C973700F644D7 /* APIInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B1E6E2C3C973700F644D7 /* APIInteractorTests.swift */; };
 		378B1E702C3C973700F644D7 /* APIInteractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 378B1E622C3C973700F644D7 /* APIInteractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		378B1E852C3C97A400F644D7 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B1E812C3C97A400F644D7 /* APIEndpoint.swift */; };
+		378B1E862C3C97A400F644D7 /* APIExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B1E832C3C97A400F644D7 /* APIExecutor.swift */; };
+		378B1E872C3C97A400F644D7 /* HttpMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B1E842C3C97A400F644D7 /* HttpMethodType.swift */; };
+		378B1E882C3C97A400F644D7 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B1E822C3C97A400F644D7 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 		378B1E632C3C973700F644D7 /* APIInteractor.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = APIInteractor.docc; sourceTree = "<group>"; };
 		378B1E692C3C973700F644D7 /* APIInteractorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIInteractorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		378B1E6E2C3C973700F644D7 /* APIInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractorTests.swift; sourceTree = "<group>"; };
+		378B1E812C3C97A400F644D7 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		378B1E822C3C97A400F644D7 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		378B1E832C3C97A400F644D7 /* APIExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIExecutor.swift; sourceTree = "<group>"; };
+		378B1E842C3C97A400F644D7 /* HttpMethodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethodType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +79,10 @@
 		378B1E612C3C973700F644D7 /* APIInteractor */ = {
 			isa = PBXGroup;
 			children = (
+				378B1E812C3C97A400F644D7 /* APIEndpoint.swift */,
+				378B1E822C3C97A400F644D7 /* APIError.swift */,
+				378B1E832C3C97A400F644D7 /* APIExecutor.swift */,
+				378B1E842C3C97A400F644D7 /* HttpMethodType.swift */,
 				378B1E622C3C973700F644D7 /* APIInteractor.h */,
 				378B1E632C3C973700F644D7 /* APIInteractor.docc */,
 			);
@@ -195,6 +207,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				378B1E642C3C973700F644D7 /* APIInteractor.docc in Sources */,
+				378B1E852C3C97A400F644D7 /* APIEndpoint.swift in Sources */,
+				378B1E862C3C97A400F644D7 /* APIExecutor.swift in Sources */,
+				378B1E872C3C97A400F644D7 /* HttpMethodType.swift in Sources */,
+				378B1E882C3C97A400F644D7 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
