@@ -9,4 +9,7 @@ import Foundation
 
 public enum HttpMethodType: String {
     case get = "GET"
+    case post = "POST"
+    case patch = "PATCH"
+    // Add more as needed
 }
