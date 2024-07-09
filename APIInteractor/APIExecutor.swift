@@ -7,18 +7,18 @@
 
 import Foundation
 
-protocol IAPIExecutor {
+public protocol IAPIExecutor {
     func executeRequest<T: Decodable>(endpoint: APIEndpoint, parameters: [String:String]?) async throws(APIError) -> T
 }
 
-struct APIExecutor: IAPIExecutor {
+public struct APIExecutor: IAPIExecutor {
     
-    let baseURL: String
+    public init() {}
         
     // MARK: - Execution -
     
-    func executeRequest<T: Decodable>(endpoint: APIEndpoint, parameters: [String:String]?) async throws(APIError) -> T {
-        guard let url = URL(string: "\(baseURL)\(endpoint.endpoint)") else {
+    public func executeRequest<T: Decodable>(endpoint: APIEndpoint, parameters: [String:String]?) async throws(APIError) -> T {
+        guard let url = URL(string: endpoint.url) else {
             throw APIError(errorType: .invalidURL)
         }
         
@@ -28,7 +28,7 @@ struct APIExecutor: IAPIExecutor {
         let session = URLSession.shared
         
         do {
-            let (data, response) = try await session.data(for: request)
+            let (data, _) = try await session.data(for: request)
             
             guard !data.isEmpty else {
                 throw APIError(errorType: .missingData)

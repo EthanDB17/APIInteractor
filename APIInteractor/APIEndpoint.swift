@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIEndpoint {
-    let endpoint: String
-    let httpMethod: HttpMethodType
+public protocol APIEndpoint {
+    var url: String { get }
+    var httpMethod: HttpMethodType { get }
 }

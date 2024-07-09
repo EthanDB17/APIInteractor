@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum HttpMethodType: String {
+public enum HttpMethodType: String {
     case get = "GET"
 }

@@ -7,18 +7,22 @@
 
 import Foundation
 
-struct APIError: Error {
+public struct APIError: Error {
     let errorType: APIErrorType
+    
+    public var errorMessage: String {
+        return errorType.errorMessage
+    }
 }
 
-enum APIErrorType {
+public enum APIErrorType {
     case invalidURL
     case missingData
     case parseFailure
     
     case generic(message: String)
     
-    var errorMessage: String {
+    public var errorMessage: String {
         switch self {
         case .invalidURL: return "The URL specified is invalid."
         case .missingData: return "The response did not contain any data."
