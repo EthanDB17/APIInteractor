@@ -15,7 +15,7 @@ public struct APIError: Error {
     }
 }
 
-public enum APIErrorType {
+public enum APIErrorType: Sendable {
     case invalidURL
     case missingData
     case parseFailure
