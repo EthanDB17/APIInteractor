@@ -18,11 +18,22 @@ public struct APIExecutor: IAPIExecutor {
     // MARK: - Execution -
     
     public func executeRequest<T: Decodable>(endpoint: APIEndpoint, parameters: [String:String]?) async throws(APIError) -> T {
-        guard let url = URL(string: endpoint.url) else {
+        guard let url = URL(string: endpoint.url), var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
             throw APIError(errorType: .invalidURL)
         }
         
-        var request = URLRequest(url: url)
+        if let parameters {
+            components.queryItems = []
+            for key in parameters.keys {
+                components.queryItems?.append(URLQueryItem(name: key, value: parameters[key]))
+            }
+        }
+        
+        guard let comoponentUrl = components.url else {
+            throw APIError(errorType: .invalidURL)
+        }
+        
+        var request = URLRequest(url: comoponentUrl)
         request.httpMethod = endpoint.httpMethod.rawValue
         
         let session = URLSession.shared
